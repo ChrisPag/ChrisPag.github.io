@@ -1,13 +1,60 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  font-family: Poppins;
+  text-align: center;
+  background-color: rgb(231, 231, 231);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+img{
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5%;
+}
+
+.nasaPic .content{
+  margin-left: auto;
+  margin-right: auto;
+  width:50%;
+  display: grid;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin-bottom:20px;
+  
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.nasaPic p, span, .content{
+  background-color: white;
+}
+
+.nasaPic span{
+  font-weight: bold;
+}
+
+
+.nasaPic button{
+  width:80px;
+  margin-left:5%;
+  margin-bottom:5%;
+  border-style: none;
+  padding:10px;
+  border-radius: 10px;
+}
+
+.nasaPic button:hover{
+  background-color: rgb(204, 204, 204);
+}
+
+.navbar{
+  width:100%;
+  padding:15px;
+  margin-top:-10px;
+  margin-bottom:50px;
+  background-color: white;
+}
+
+.navbar p, h1{
+  background-color: white;
 }

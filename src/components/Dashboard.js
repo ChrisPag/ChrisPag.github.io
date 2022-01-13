@@ -3,7 +3,7 @@ import NasaPic from "./NasaPic";
 const Dashboard = () => {
     return (
       <div className="dashboard">
-          <NasaPic />
+        <NasaPic />
       </div>
     );
   }

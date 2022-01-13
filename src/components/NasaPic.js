@@ -21,15 +21,15 @@ const NasaPic = () => {
 
   return (
     <div className="nasaPic">
-      {posts && (posts.map((post, id)=>(
+      {posts && (posts.map((post)=>(
         <div className="content" key={post.id}>
           <img
             src={post.url}
             alt={post.title}
           ></img>
 
-          <p>{post.title}</p>
-          <p>{post.date}</p>
+          <p><span>{post.title}</span> - {post.date}</p>
+          <button>Like</button>
 
         </div>
       )))}
