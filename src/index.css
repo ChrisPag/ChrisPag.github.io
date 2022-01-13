@@ -33,20 +33,24 @@ img{
   font-weight: bold;
 }
 
-.dashboard button{
+.likeButton{
+  background-color: white;
+}
+
+.likeButton button{
   width:80px;
-  margin-left:5%;
+  margin-right:65%;
   margin-bottom:5%;
   border-style: none;
   padding:10px;
   border-radius: 10px;
 }
 
-.dashboard button:hover #like{
+.likeButton button:hover #like{
   background-color: rgb(216, 216, 216);
 }
 
-.dashboard button:hover{
+.likeButton button:hover{
   background-color: rgb(216, 216, 216);
 }
 

@@ -1,6 +1,6 @@
 import useFetch from './useFetch';
 import useDate from './useDate';
-import {FcLike} from 'react-icons/fc';
+import LikeButton from './LikeButton';
 
 const Dashboard = () => {
   //Get today's date
@@ -22,7 +22,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      {posts && (posts.map((post)=>(
+      {posts && (posts.map(post=>(
         <div className="content" key={post.id}>
           <img
             src={post.url}
@@ -30,7 +30,7 @@ const Dashboard = () => {
           ></img>
 
           <p><span>{post.title}</span> - {post.date}</p>
-          <button>Like <FcLike id="like"/></button>
+          <LikeButton postID = {post.id}/>
 
         </div>
       )))}

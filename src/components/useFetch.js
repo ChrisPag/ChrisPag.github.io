@@ -7,19 +7,19 @@ const useFetch = (url) => {
     useEffect(() => {
         fetch(url)
         .then(response => {
-            if(!response.ok){
-            throw Error('Could not fetch the data');
-            }
-            return response.json()
+          if(!response.ok){
+          throw Error('Could not fetch the data');
+          }
+          return response.json()
         })
 
         .then(data =>{
-            setData(data);
-            setIsLoaded(true);
+          setData(data);
+          setIsLoaded(true);
         })
 
         .catch(error => {
-            console.log(error.message);
+          console.log(error.message);
         });
       }, [url]);
 
