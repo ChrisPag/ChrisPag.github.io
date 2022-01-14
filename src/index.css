@@ -21,7 +21,7 @@ img{
   display: grid;
   border-radius: 15px;
   margin-bottom:15px;
-  
+  overflow: hidden;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
@@ -33,17 +33,23 @@ img{
   font-weight: bold;
 }
 
+.dashboard p{
+  padding-left:10px;
+  padding-right:10px;
+}
+
 .likeButton{
   background-color: white;
 }
 
 .likeButton button{
   width:80px;
-  margin-right:65%;
   margin-bottom:5%;
   border-style: none;
   padding:10px;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .likeButton button:hover #like{
@@ -58,6 +64,29 @@ img{
   font-size:15px;
   margin-bottom:-2px;
 }
+
+/*.dashboard button{
+  width:80px;
+  margin-bottom:5%;
+  border-style: none;
+  padding:10px;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dashboard button:hover #like{
+  background-color: rgb(216, 216, 216);
+}
+
+.dashboard button:hover{
+  background-color: rgb(216, 216, 216);
+}
+
+#like{
+  font-size:15px;
+  margin-bottom:-2px;
+}*/
 
 /** NAVBAR CONTENT **/
 .navbar{

@@ -1,14 +1,18 @@
 import {FcLike} from 'react-icons/fc';
 
-const LikeButton = (postID) => {
+const LikeButton = (postID, numObjects) => {
 
-    const handleClick = () =>{
-        console.log(postID);
+    let likedPost = new Array(numObjects).fill(false);
+    let likeText = "Like";
+
+    const handleClick = (postID) =>{
+        likedPost[postID] = !likedPost[postID];
+        console.log(likedPost[postID]);
     }
 
     return (
         <div className="likeButton">
-            <button onClick={handleClick}>Like <FcLike id="like"/></button>
+            <button onClick={() =>handleClick(postID)}>{/*likeText*/}Like <FcLike id="like"/></button>
         </div>
     );
 }

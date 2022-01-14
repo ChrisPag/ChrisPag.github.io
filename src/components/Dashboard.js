@@ -6,9 +6,10 @@ const Dashboard = () => {
   //Get today's date
   const endDate = useDate(0);
   const startDate = useDate(2);
+  //var likeText= "Like";
  
   //Fetch image data
-  const {data: posts} = useFetch('https://api.nasa.gov/planetary/apod?api_key=W7iawCNJkLDutGN32iRFwseMCxmvT8LnYwG32XHM&start_date='
+  const {data: posts, numObjects} = useFetch('https://api.nasa.gov/planetary/apod?api_key=W7iawCNJkLDutGN32iRFwseMCxmvT8LnYwG32XHM&start_date='
   + startDate + '&end_date=' + endDate
   );
   
@@ -30,8 +31,9 @@ const Dashboard = () => {
           ></img>
 
           <p><span>{post.title}</span> - {post.date}</p>
-          <LikeButton postID = {post.id}/>
-
+          {/*<button onClick={() => handleClick(post.id, post.liked)}>
+            {likeText} <FcLike id="like"/></button>*/}
+            <LikeButton postID ={post.id} numObjects = {numObjects}/>
         </div>
       )))}
     </div>

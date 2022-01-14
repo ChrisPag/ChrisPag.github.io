@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 const useFetch = (url) => {
     const [data, setData] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const [numObjects, setNumObjects] = useState();
 
     useEffect(() => {
         fetch(url)
@@ -16,6 +17,7 @@ const useFetch = (url) => {
         .then(data =>{
           setData(data);
           setIsLoaded(true);
+          setNumObjects(data.length);
         })
 
         .catch(error => {
@@ -23,7 +25,7 @@ const useFetch = (url) => {
         });
       }, [url]);
 
-    return {data, isLoaded};
+    return {data, isLoaded, numObjects};
   }
   
 export default useFetch;
