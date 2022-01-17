@@ -16,8 +16,6 @@ const LikeButton = (postID, numObjects) => {
           newArr[index] = 'Like';
         }
         setLikedPosts(newArr);
-        console.log(likedPosts);
-    
       }
 
     return (

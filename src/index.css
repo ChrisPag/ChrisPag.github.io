@@ -38,7 +38,7 @@ img{
   padding-right:10px;
 }
 
-.likeButton{
+/*.likeButton{
   background-color: white;
 }
 
@@ -63,9 +63,9 @@ img{
 #like{
   font-size:15px;
   margin-bottom:-2px;
-}
+}*/
 
-/*.dashboard button{
+.dashboard button{
   width:80px;
   margin-bottom:5%;
   border-style: none;
@@ -86,7 +86,8 @@ img{
 #like{
   font-size:15px;
   margin-bottom:-2px;
-}*/
+  margin-left:5px;
+}
 
 /** NAVBAR CONTENT **/
 .navbar{
