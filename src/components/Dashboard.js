@@ -2,12 +2,12 @@ import useFetch from './useFetch';
 import useDate from './useDate';
 import { useState, useEffect } from 'react';
 import {FcLike} from 'react-icons/fc';
-//import LikeButton from './LikeButton';
+import DateTest from './DateTest';
 
 const Dashboard = () => {
   //Get today's date
-  const endDate = useDate(0);
   const startDate = useDate(2);
+  const endDate = useDate(0);
   
   //Fetch image data
   const {data: posts, numObjects, isLoaded} = useFetch('https://api.nasa.gov/planetary/apod?api_key=W7iawCNJkLDutGN32iRFwseMCxmvT8LnYwG32XHM&start_date='
@@ -47,7 +47,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       {!isLoaded && <div>Loading...</div>}
-      {posts && (posts.map(post=>(
+
+      {posts &&
+      <DateTest/>}
+
+      {posts && (posts.map((post)=>(
         <div className="content" key={post.id}>
           <img
             src={post.url}
@@ -56,9 +60,9 @@ const Dashboard = () => {
 
           <p><span>{post.title}</span> - {post.date}</p>
           <button onClick={()=>handleClick(post.id)}>{liked[post.id]}<FcLike id= "like"/></button>
-          {/*<LikeButton postID ={post.id} numObjects = {numObjects}/>*/}
         </div>
       )))}
+      
     </div>
   );
 }
