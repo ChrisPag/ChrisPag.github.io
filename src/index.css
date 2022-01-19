@@ -88,6 +88,10 @@ button:hover{
   padding-bottom:20px;
 }
 
+form{
+  margin-bottom:20px;
+}
+
 
 #submit{
   background-color: #93e85e;
@@ -114,12 +118,21 @@ select:hover {
 
 #open{
   background-color: white;
-  width:120px;
   border-radius: 10px;
   padding:10px;
+  padding-left:15px;
+  padding-right:15px;
   margin-bottom:20px;
 }
 
+#filter{
+  background-color: white;
+}
+
 #open:hover{
+  background-color: rgb(216, 216, 216);
+}
+
+#open:hover #filter{
   background-color: rgb(216, 216, 216);
 }

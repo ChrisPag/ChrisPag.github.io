@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Content from './Content';
+import { FaFilter } from 'react-icons/fa'
 
 const Dashboard = () => {
     const getDate = (daysPrior) =>{
@@ -42,10 +43,13 @@ const Dashboard = () => {
 
     return (
         <div className ="dashboard">
-            <button id="open" onClick ={openForm}>Filter by date</button>
+            <button id="open" onClick ={openForm}>
+                Filter by date <FaFilter id="filter" />
+            </button>
 
             {isOpen && <form onSubmit = {handleSubmit}>
-                <label>From date: </label>
+                <p>View posts:</p>
+                <label>From date </label>
                 <input type ="date"
                     min = "1995-06-20"
                     max = { startValue }
@@ -53,7 +57,7 @@ const Dashboard = () => {
                     onChange={(e) => setStartValue(e.target.value)}>
                 </input><br />
 
-                <label>To date: </label>
+                <label>To date </label>
                 <input type ="date"
                     min = { startValue }
                     max = { initialEnd }
