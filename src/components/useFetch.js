@@ -6,6 +6,7 @@ const useFetch = (url) => {
     const [numObjects, setNumObjects] = useState();
 
     useEffect(() => {
+      setIsLoaded(false);
       fetch(url)
       .then(response => {
         if(!response.ok){

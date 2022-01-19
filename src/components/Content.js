@@ -34,9 +34,9 @@ const Content = ({startDate, endDate}) => {
     <div className="content">
       {!isLoaded && <div>Loading...</div>}
 
-      {/* slice() returns a new array, then reverse array
-      so most recent post appears first */}
-      {posts && (posts.slice(0).reverse().map((post, i)=>(
+      {/* slice() returns a new array, then reverse() reverses that new array
+      so the most recent post appears first */}
+      {posts && isLoaded && (posts.slice(0).reverse().map((post, i)=>(
         <div className="posts" key={i}>
           <img
             src={post.url}
