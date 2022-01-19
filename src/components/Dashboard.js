@@ -1,70 +1,55 @@
-import useFetch from './useFetch';
-import useDate from './useDate';
-import { useState, useEffect } from 'react';
-import {FcLike} from 'react-icons/fc';
-import DateTest from './DateTest';
+import { useState } from 'react';
+import Content from './Content';
 
 const Dashboard = () => {
-  //Get today's date
-  const startDate = useDate(2);
-  const endDate = useDate(0);
-  
-  //Fetch image data
-  const {data: posts, numObjects, isLoaded} = useFetch('https://api.nasa.gov/planetary/apod?api_key=W7iawCNJkLDutGN32iRFwseMCxmvT8LnYwG32XHM&start_date='
-  + startDate + '&end_date=' + endDate
-  );
+    
+    const getDate = (daysPrior) =>{
+        const date = new Date();
+        date.setDate(date.getDate() - daysPrior)
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let day = date.getDate();
+        let formattedDate = year + '-' + month + '-' + day;
 
-  //Create array for button text
-  const likedArray = new Array(numObjects).fill('Like');
-  
-  //Update button text array (likedArray) as posts load
-  const [liked, setLiked] = useState([]);
-  useEffect(()=>{
-    setLiked(likedArray);
-  },[numObjects, posts])
-
-  //Check if posts exist
-  if(posts){
-    //Create unique id for each object, add like state
-    for(let i = 0; i < posts.length; i++){
-      posts[i]["id"] = i;
+        return (formattedDate)
     }
-  }
-  
-  //Update like state onClick
-  const handleClick = (index) =>{
-    let newArray = [...liked];
-  
-    if(newArray[index]==='Like'){
-      newArray[index] = 'Unlike';
+    
+    const initialStart = getDate(2);
+    const initialEnd = getDate(0);
+
+    const [startValue, setStartValue] = useState(initialStart);
+    const [endValue, setEndValue] = useState(initialEnd);
+
+    const [startDate, setStartDate] = useState(initialStart);
+    const [endDate, setEndDate] = useState(initialEnd);
+
+    const handleSubmit = (e) =>{
+        e.preventDefault();
+        setStartDate(startValue);
+        setEndDate(endValue);
     }
-    else{
-      newArray[index] = 'Like';
-    }
-    setLiked(newArray);
-  }
+    return (
+        <div className ="dashboard">
+            <form onSubmit = {handleSubmit}>
+                <label>From date: </label>
+                <input type ="date"
+                    min = "1995-06-20"
+                    value={ startValue }
+                    onChange={(e) => setStartValue(e.target.value)}>
+                </input><br />
 
-  return (
-    <div className="dashboard">
-      {!isLoaded && <div>Loading...</div>}
+                <label>To date: </label>
+                <input type ="date"
+                    value={ endValue }
+                    onChange={(e) => setEndValue(e.target.value)}>
+                </input>
 
-      {posts &&
-      <DateTest/>}
+                <button id="submit">Submit</button>
+            </form>
 
-      {posts && (posts.map((post)=>(
-        <div className="content" key={post.id}>
-          <img
-            src={post.url}
-            alt={post.title}
-          ></img>
-
-          <p><span>{post.title}</span> - {post.date}</p>
-          <button onClick={()=>handleClick(post.id)}>{liked[post.id]}<FcLike id= "like"/></button>
+            <Content startDate = {startDate} endDate = {endDate}/>
         </div>
-      )))}
-      
-    </div>
-  );
+    );
 }
   
-  export default Dashboard;
+export default Dashboard;

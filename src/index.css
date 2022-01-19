@@ -14,7 +14,7 @@ img{
 }
 
 /** DASHBOARD CONTENT **/
-.dashboard .content{
+.content .posts{
   margin-left: auto;
   margin-right: auto;
   width:50%;
@@ -25,24 +25,20 @@ img{
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.dashboard p, span, .content{
+.content p, span, .posts{
   background-color: white;
 }
 
-.dashboard span{
+.content span{
   font-weight: bold;
 }
 
-.dashboard p{
+.content p{
   padding-left:10px;
   padding-right:10px;
 }
 
-/*.likeButton{
-  background-color: white;
-}
-
-.likeButton button{
+.posts button{
   width:80px;
   margin-bottom:5%;
   border-style: none;
@@ -52,34 +48,11 @@ img{
   margin-right: auto;
 }
 
-.likeButton button:hover #like{
+.posts button:hover #like{
   background-color: rgb(216, 216, 216);
 }
 
-.likeButton button:hover{
-  background-color: rgb(216, 216, 216);
-}
-
-#like{
-  font-size:15px;
-  margin-bottom:-2px;
-}*/
-
-.content button{
-  width:80px;
-  margin-bottom:5%;
-  border-style: none;
-  padding:10px;
-  border-radius: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.content button:hover #like{
-  background-color: rgb(216, 216, 216);
-}
-
-.content button:hover{
+.posts button:hover{
   background-color: rgb(216, 216, 216);
 }
 
@@ -104,11 +77,11 @@ img{
 }
 
 /*Date*/
-.date{
+.dashboard{
   padding-bottom:20px;
 }
 
-.date button{
+#submit{
   background-color: #93e85e;
   margin-left:10px;
   padding:5px;
@@ -117,16 +90,15 @@ img{
   border-style: none;
 }
 
-.date button:hover{
+#submit:hover{
   background-color: #71b349;
 }
 
-select {
-  padding:5px;
-  padding-left:12px;
-  padding-right:12px;
+input {
   border-style: none;
   background-color: white;
+  padding:5px;
+  margin-bottom:10px;
 }
 
 select:hover {

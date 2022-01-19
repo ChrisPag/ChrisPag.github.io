@@ -6,24 +6,24 @@ const useFetch = (url) => {
     const [numObjects, setNumObjects] = useState();
 
     useEffect(() => {
-        fetch(url)
-        .then(response => {
-          if(!response.ok){
-          throw Error('Could not fetch the data');
-          }
-          return response.json()
-        })
+      fetch(url)
+      .then(response => {
+        if(!response.ok){
+        throw Error('Could not fetch the data');
+        }
+        return response.json()
+      })
 
-        .then(data =>{
-          setData(data);
-          setIsLoaded(true);
-          setNumObjects(data.length);
-        })
+      .then(data =>{
+        setData(data);
+        setIsLoaded(true);
+        setNumObjects(data.length);
+      })
 
-        .catch(error => {
-          console.log(error.message);
-        });
-      }, [url]);
+      .catch(error => {
+        console.log(error.message);
+      });
+    }, [url]);
 
     return {data, isLoaded, numObjects};
   }
