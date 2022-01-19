@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/chrispag.github.io/static/css/main.72e2b7d2.css",
-    "main.js": "/chrispag.github.io/static/js/main.89d60604.js",
-    "static/js/787.fa78698e.chunk.js": "/chrispag.github.io/static/js/787.fa78698e.chunk.js",
-    "index.html": "/chrispag.github.io/index.html",
-    "main.72e2b7d2.css.map": "/chrispag.github.io/static/css/main.72e2b7d2.css.map",
-    "main.89d60604.js.map": "/chrispag.github.io/static/js/main.89d60604.js.map",
-    "787.fa78698e.chunk.js.map": "/chrispag.github.io/static/js/787.fa78698e.chunk.js.map"
+    "main.css": "/static/css/main.72e2b7d2.css",
+    "main.js": "/static/js/main.2a7e1a39.js",
+    "static/js/787.fa78698e.chunk.js": "/static/js/787.fa78698e.chunk.js",
+    "index.html": "/index.html",
+    "main.72e2b7d2.css.map": "/static/css/main.72e2b7d2.css.map",
+    "main.2a7e1a39.js.map": "/static/js/main.2a7e1a39.js.map",
+    "787.fa78698e.chunk.js.map": "/static/js/787.fa78698e.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.72e2b7d2.css",
-    "static/js/main.89d60604.js"
+    "static/js/main.2a7e1a39.js"
   ]
 }
