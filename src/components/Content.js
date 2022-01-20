@@ -5,8 +5,8 @@ import {FcLike} from 'react-icons/fc';
 const Content = ({startDate, endDate}) => {
   //Fetch image data
   const {data: posts, numObjects, isLoaded, error, errorMessage} = 
-  useFetch('https://api.nasa.gov/planetary/apod?api_key=W7iawCNJkLDutGN32iRFwseMCxmvT8LnYwG32XHM&start_date='
-  + startDate + '&end_date=' + endDate
+  useFetch('https://api.nasa.gov/planetary/apod?api_key=' +
+  process.env.REACT_APP_API_KEY +'&start_date='+ startDate + '&end_date=' + endDate
   );
 
   //Create array for button text
