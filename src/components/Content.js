@@ -4,7 +4,8 @@ import {FcLike} from 'react-icons/fc';
 
 const Content = ({startDate, endDate}) => {
   //Fetch image data
-  const {data: posts, numObjects, isLoaded} = useFetch('https://api.nasa.gov/planetary/apod?api_key=W7iawCNJkLDutGN32iRFwseMCxmvT8LnYwG32XHM&start_date='
+  const {data: posts, numObjects, isLoaded, error, errorMessage} = 
+  useFetch('https://api.nasa.gov/planetary/apod?api_key=W7iawCNJkLDutGN32iRFwseMCxmvT8LnYwG32XHM&start_date='
   + startDate + '&end_date=' + endDate
   );
 
@@ -32,7 +33,8 @@ const Content = ({startDate, endDate}) => {
 
   return (
     <div className="content">
-      {!isLoaded && <div>Loading...</div>}
+      {!isLoaded && !error && <div>Loading...</div>}
+      {error && <div>{errorMessage}</div>}
 
       {/* slice() returns a new array, then reverse() reverses that new array
       so the most recent post appears first */}

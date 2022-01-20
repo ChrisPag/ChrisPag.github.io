@@ -9,6 +9,12 @@ const Dashboard = () => {
         let month = date.getMonth() + 1;
         let year = date.getFullYear();
         let day = date.getDate();
+        if(day<10){
+            day = '0'+day;
+        }
+        if(month<10){
+            month = '0'+month;
+        }
         let formattedDate = year + '-' + month + '-' + day;
         return (formattedDate)
     }
@@ -30,8 +36,6 @@ const Dashboard = () => {
 
     const openForm = () =>{
         setIsOpen(!isOpen);
-        setStartValue(startValue);
-        setEndValue(endValue);
     }
 
     const handleSubmit = (e) =>{
@@ -51,10 +55,11 @@ const Dashboard = () => {
                 <p>View posts:</p>
                 <label>From date </label>
                 <input type ="date"
-                    min = "1995-06-20"
-                    max = { startValue }
+                    min = "2021-12-01"
+                    max = { initialEnd }
                     value = { startValue }
-                    onChange={(e) => setStartValue(e.target.value)}>
+                    onChange={(e) => setStartValue(e.target.value)}
+                    required>
                 </input><br />
 
                 <label>To date </label>
@@ -62,7 +67,8 @@ const Dashboard = () => {
                     min = { startValue }
                     max = { initialEnd }
                     value={ endValue }
-                    onChange={(e) => setEndValue(e.target.value)}>
+                    onChange={(e) => setEndValue(e.target.value)}
+                    required>
                 </input>
 
                 <button id="submit">Submit</button>
