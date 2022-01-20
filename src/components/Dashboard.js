@@ -3,6 +3,8 @@ import Content from './Content';
 import { FaFilter } from 'react-icons/fa'
 
 const Dashboard = () => {
+    /* Get and format current date, and date a given 
+    number of days prior to the current date */
     const getDate = (daysPrior) =>{
         const date = new Date();
         date.setDate(date.getDate() - daysPrior)
@@ -19,19 +21,19 @@ const Dashboard = () => {
         return (formattedDate)
     }
     
-    //Date from two days ago
+    //Get date from two days ago and today's date
     const initialStart = getDate(2);
-    //Today's date
     const initialEnd = getDate(0);
 
-    //Set value displayed in date input to initial start value
+    /*Set value displayed in date input to initial start value
+    and set actual start and end dates to initial values*/
     const [startValue, setStartValue] = useState(initialStart);
     const [endValue, setEndValue] = useState(initialEnd);
 
-    //Set actual start and end dates to initial values
     const [startDate, setStartDate] = useState(initialStart);
     const [endDate, setEndDate] = useState(initialEnd);
 
+    //Toggle open state
     const [isOpen, setIsOpen] = useState(false);
 
     const openForm = () =>{
